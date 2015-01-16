@@ -8,8 +8,8 @@
 
 - shell: easy_install3 pip
 
-- copy: src=requirements.txt dest=/root/requirements.txt
+- copy: src=requirements.txt dest=/tmp/requirements.txt
 
-- pip: executable=pip3 requirements=/root/requirements.txt
+- pip: executable=/usr/local/bin/pip3 requirements=/tmp/requirements.txt
 
-- copy: src=dns.py dest=/root/dns.py owner=root mode=0550
+- copy: src=dns.py dest=/tmp/dns.py owner=root mode=0550

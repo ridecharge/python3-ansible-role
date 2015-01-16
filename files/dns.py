@@ -35,14 +35,17 @@ def build_record(name, domain, az):
     return "{}-{}.{}".format(name, zone, domain)
 
 
-LOGGLY_URL = 'https://logs-01.loggly.com/inputs/"+ \
-             "e8bcd155-264b-4ec0-88be-fcb023f76a89/tag/python,boot,dns,cloudformation'
+LOGGLY_URL = "https://logs-01.loggly.com/inputs/"+ \
+             "e8bcd155-264b-4ec0-88be-fcb023f76a89/tag/python,boot,dns,cloudformation"
 
 
 def build_logger(name, instance_id):
     """ Sets up a logger to send files to Loggly with dynamic tags """
     logger = logging.getLogger(name)
-    handler = loggly.handlers.HTTPSHandler(",".join([LOGGLY_URL, instance_id]))
+    url = ",".join([LOGGLY_URL, instance_id])
+    print(url)
+    handler = loggly.handlers.HTTPSHandler(url)
+
     logger.addHandler(handler)
     logger.setLevel(logging.INFO)
     return logger
