@@ -43,9 +43,7 @@ def build_logger(name, instance_id):
     """ Sets up a logger to send files to Loggly with dynamic tags """
     logger = logging.getLogger(name)
     url = ",".join([LOGGLY_URL, instance_id])
-    print(url)
     handler = loggly.handlers.HTTPSHandler(url)
-
     logger.addHandler(handler)
     logger.setLevel(logging.INFO)
     return logger
