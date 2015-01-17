@@ -1,2 +1,0 @@
-boto>=2.34.0
-loggly-handler>=0.1.2
