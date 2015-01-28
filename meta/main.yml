@@ -12,8 +12,8 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - trusty
-  #categories:
-  #- packaging
-  #- system
+  categories:
+  - packaging
+  - system
 dependencies: []
   
