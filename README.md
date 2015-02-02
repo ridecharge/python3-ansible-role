@@ -16,16 +16,16 @@ python3_pip_packages: packages to be installed by the pip3 python package manage
 Example Playbook
 ----------------
 
----
-- hosts: all
-  connection: local
-  sudo: yes
-  roles:
-    - python3
-  vars:
-    python3_pip_packages:
-      - awscli
-      - boto
+  --- 
+  - hosts: all
+    connection: local
+    sudo: yes
+    roles:
+      - python3
+    vars:
+      python3_pip_packages:
+        - awscli
+        - boto
 
 License
 -------
